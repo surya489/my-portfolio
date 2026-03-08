@@ -138,7 +138,7 @@ export default function ContactPage() {
             <Reveal delay={0.08}>
                 <form
                     onSubmit={handleSubmit}
-                    className="space-y-6 bg-[#16161c] p-8 rounded-xl border border-zinc-800"
+                    className="app-card space-y-6 rounded-xl border p-8"
                 >
                     <AnimatePresence>
                         {feedback && (
@@ -169,7 +169,7 @@ export default function ContactPage() {
                             name="name"
                             value={form.name}
                             onChange={handleChange}
-                            className="w-full bg-[#0F0F13] border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                            className="app-input w-full rounded-lg border px-4 py-3 focus:outline-none focus:border-purple-500"
                         />
                         <AnimatePresence>
                             {fieldErrors.name && (
@@ -197,7 +197,7 @@ export default function ContactPage() {
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            className="w-full bg-[#0F0F13] border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                            className="app-input w-full rounded-lg border px-4 py-3 focus:outline-none focus:border-purple-500"
                         />
                         <AnimatePresence>
                             {fieldErrors.email && (
@@ -224,7 +224,7 @@ export default function ContactPage() {
                                     setForm({ ...form, countryCode: e.target.value });
                                     setFieldErrors((prev) => ({ ...prev, countryCode: undefined, phone: undefined }));
                                 }}
-                                className="bg-[#0F0F13] border border-zinc-700 rounded-lg px-3 py-3 focus:outline-none focus:border-purple-500"
+                                className="app-input rounded-lg border px-3 py-3 focus:outline-none focus:border-purple-500"
                             >
                                 {COUNTRY_CODE_RULES.map((item) => (
                                     <option key={item.code} value={item.code}>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                                 value={form.phone}
                                 onChange={handleChange}
                                 placeholder="Phone number"
-                                className="w-full bg-[#0F0F13] border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                                className="app-input w-full rounded-lg border px-4 py-3 focus:outline-none focus:border-purple-500"
                             />
                         </div>
                         <AnimatePresence>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                             rows={5}
                             value={form.message}
                             onChange={handleChange}
-                            className="w-full bg-[#0F0F13] border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                            className="app-input w-full rounded-lg border px-4 py-3 focus:outline-none focus:border-purple-500"
                         />
                         <AnimatePresence>
                             {fieldErrors.message && (
@@ -288,7 +288,7 @@ export default function ContactPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition disabled:opacity-50"
+                        className="rounded-lg bg-[var(--app-brand-strong)] px-6 py-3 text-white hover:bg-[var(--app-brand)] transition disabled:opacity-50"
                     >
                         {loading ? "Sending..." : "Send Message"}
                     </button>

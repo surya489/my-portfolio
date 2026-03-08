@@ -28,7 +28,7 @@ export default function ProjectCard({
       <motion.div
         whileHover={{ y: -6, scale: 1.02 }}
         transition={{ duration: 0.2 }}
-        className="bg-[#16161c] rounded-xl border border-zinc-800 overflow-hidden hover:border-purple-500 transition"
+        className="app-card rounded-xl border overflow-hidden hover:border-purple-500 transition"
       >
         
         <Image
@@ -48,7 +48,7 @@ export default function ProjectCard({
             {tech.map((item) => (
               <span
                 key={item}
-                className="text-xs bg-purple-600/20 text-purple-400 px-2 py-1 rounded"
+                className="text-xs bg-[var(--app-brand-soft)] text-[var(--app-brand)] px-2 py-1 rounded"
               >
                 {item}
               </span>
@@ -60,7 +60,7 @@ export default function ProjectCard({
             <a
               href={github}
               target="_blank"
-              className="text-purple-400 hover:underline"
+              className="text-[var(--app-brand)] hover:underline"
             >
               GitHub
             </a>
@@ -68,7 +68,7 @@ export default function ProjectCard({
             <a
               href={demo}
               target="_blank"
-              className="text-purple-400 hover:underline"
+              className="text-[var(--app-brand)] hover:underline"
             >
               Live Demo
             </a>

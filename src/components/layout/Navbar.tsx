@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { FileDown, FolderKanban, House, Mail, Menu, X } from "lucide-react";
+import { BookText, FileDown, FolderKanban, House, Mail, Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,22 +23,30 @@ export default function Navbar() {
       icon: Mail,
       note: "Work inquiries",
     },
+    {
+      href: "/blog",
+      label: "Blog",
+      icon: BookText,
+      note: "Articles and insights",
+    },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-[#0F0F13]/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[var(--app-border)] bg-[var(--app-bg)] backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-white">
+        <Link href="/" className="text-xl font-bold text-[var(--app-text)]">
           Jayasurya
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-          <Link href="/">Home</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact</Link>
+        <div className="hidden md:flex items-center gap-6 text-sm text-[var(--app-muted)]">
+          <Link href="/" className="hover:text-[var(--app-text)]">Home</Link>
+          <Link href="/projects" className="hover:text-[var(--app-text)]">Projects</Link>
+          <Link href="/blog" className="hover:text-[var(--app-text)]">Blog</Link>
+          <Link href="/contact" className="hover:text-[var(--app-text)]">Contact</Link>
+          <ThemeToggle />
 
           <a
             href="/resume.pdf"
@@ -51,7 +60,7 @@ export default function Navbar() {
         {/* Mobile Button */}
         <button
           aria-label={open ? "Close menu" : "Open menu"}
-          className="md:hidden rounded-xl border border-zinc-700/70 bg-zinc-900/80 p-2 text-white"
+          className="md:hidden rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] p-2 text-[var(--app-text)]"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -80,8 +89,8 @@ export default function Navbar() {
               transition={{ duration: 0.24, ease: "easeOut" }}
               className="absolute left-0 right-0 top-full px-4 pt-3"
             >
-              <div className="mx-auto max-w-6xl rounded-2xl bg-gradient-to-br from-fuchsia-500/40 via-purple-500/25 to-cyan-400/30 p-[1px] shadow-[0_18px_45px_-18px_rgba(168,85,247,0.75)]">
-                <div className="rounded-2xl border border-zinc-700/70 bg-[#11131a]/95 p-3">
+              <div className="mx-auto max-w-6xl rounded-2xl bg-gradient-to-br from-fuchsia-500/40 via-purple-500/25 to-purple-400/30 p-[1px] shadow-[0_18px_45px_-18px_rgba(168,85,247,0.75)]">
+                <div className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-surface)] p-3">
                   <div className="grid gap-2">
                     {navItems.map((item, index) => {
                       const Icon = item.icon;
@@ -96,14 +105,14 @@ export default function Navbar() {
                           <Link
                             href={item.href}
                             onClick={() => setOpen(false)}
-                            className="flex items-center gap-3 rounded-xl border border-transparent bg-zinc-900/70 px-3 py-3 text-zinc-200 transition hover:border-purple-400/40 hover:bg-zinc-800/85"
+                            className="flex items-center gap-3 rounded-xl border border-transparent bg-[var(--app-elevated)] px-3 py-3 text-[var(--app-text)] transition hover:border-[var(--app-brand)]/40 hover:bg-[var(--app-surface)]"
                           >
-                            <span className="rounded-lg bg-purple-500/20 p-2 text-purple-300">
+                            <span className="rounded-lg bg-[var(--app-brand-soft)] p-2 text-[var(--app-brand)]">
                               <Icon size={16} />
                             </span>
                             <span>
                               <span className="block text-sm font-medium">{item.label}</span>
-                              <span className="block text-xs text-zinc-400">{item.note}</span>
+                              <span className="block text-xs text-[var(--app-muted)]">{item.note}</span>
                             </span>
                           </Link>
                         </motion.div>
@@ -118,11 +127,16 @@ export default function Navbar() {
                     href="/resume.pdf"
                     download="Jayasurya-Resume.pdf"
                     onClick={() => setOpen(false)}
-                    className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-500 px-4 py-3 text-sm font-medium text-white"
+                    className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[var(--app-brand-strong)] px-4 py-3 text-sm font-medium text-white"
                   >
                     <FileDown size={16} />
                     Download Resume
                   </motion.a>
+
+                  <div className="mt-3 flex justify-center">
+                    <ThemeToggle />
+                  </div>
+                  
                 </div>
               </div>
             </motion.div>

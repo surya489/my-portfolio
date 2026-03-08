@@ -11,7 +11,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 -z-10 flex justify-center items-start">
         <div className="h-87.5 w-175 bg-purple-600/20 blur-[140px] rounded-full"></div>
-        <div className="absolute h-62.5 w-125 bg-indigo-500/20 blur-[120px] rounded-full"></div>
+        <div className="absolute h-62.5 w-125 bg-fuchsia-500/20 blur-[120px] rounded-full"></div>
       </div>
 
       <motion.div
@@ -24,7 +24,7 @@ export default function Hero() {
           Hi, I&apos;m
         </p>
 
-        <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-purple-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+        <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-purple-400 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text">
           Jayasurya
         </h1>
 
@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/projects"
-            className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition"
+            className="rounded-lg bg-[var(--app-brand-strong)] px-6 py-3 text-white hover:bg-[var(--app-brand)] transition"
           >
             View Projects
           </Link>
@@ -49,7 +49,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download="Jayasurya-Resume.pdf"
-            className="border border-purple-600 px-6 py-3 rounded-lg hover:bg-purple-600 hover:text-white transition"
+            className="rounded-lg border border-[var(--app-brand-strong)] px-6 py-3 text-[var(--app-text)] hover:bg-[var(--app-brand-strong)] hover:text-white transition"
           >
             Download Resume
           </a>

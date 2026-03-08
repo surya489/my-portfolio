@@ -2,8 +2,27 @@
 
 import { GitHubCalendar } from "react-github-calendar";
 import Reveal from "@/components/ui/Reveal";
+import { useEffect, useState } from "react";
 
 export default function GithubActivity() {
+  const [colorScheme, setColorScheme] = useState<"light" | "dark">("dark");
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const activeTheme = document.documentElement.getAttribute("data-theme");
+      setColorScheme(activeTheme === "light" ? "light" : "dark");
+    };
+
+    updateTheme();
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <Reveal>
@@ -11,13 +30,13 @@ export default function GithubActivity() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <div className="bg-[#16161c] border border-zinc-800 rounded-xl p-6 overflow-x-auto">
+        <div className="app-card rounded-xl border p-6 overflow-x-auto">
         <GitHubCalendar
           username="surya489"
           blockSize={15}
           blockMargin={5}
           fontSize={16}
-          colorScheme="dark"
+          colorScheme={colorScheme}
         />
         </div>
       </Reveal>

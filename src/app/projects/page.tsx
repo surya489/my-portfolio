@@ -1,5 +1,5 @@
-import ProjectCard from "@/components/home/ProjectCard";
-import { projects } from "@/data/projects";
+import ProjectList from "@/components/projects/ProjectList";
+import { PROJECTS_PER_LOAD, projects } from "@/data/projects";
 import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
@@ -26,11 +26,7 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <Reveal delay={0.08}>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-        </div>
+        <ProjectList items={projects} projectsPerLoad={PROJECTS_PER_LOAD} />
       </Reveal>
 
     </main>

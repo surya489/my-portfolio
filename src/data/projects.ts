@@ -1,3 +1,6 @@
+export const FEATURED_PROJECTS_LIMIT = 3;
+export const PROJECTS_PER_LOAD = 6;
+
 export const projects = [
   {
     slug: "taskflow",

@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: Props) {
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="text-xs bg-purple-600/20 text-purple-400 px-2 py-1 rounded"
+            className="text-xs bg-[var(--app-brand-soft)] text-[var(--app-brand)] px-2 py-1 rounded"
           >
             {tech}
           </span>
@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }: Props) {
       </Reveal>
 
       <Reveal delay={0.12}>
-        <p className="text-gray-300 leading-relaxed mb-10">
+        <p className="text-[var(--app-text)]/90 leading-relaxed mb-10">
           {project.content}
         </p>
       </Reveal>
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: Props) {
         <a
           href={project.github}
           target="_blank"
-          className="text-purple-400 hover:underline"
+          className="text-[var(--app-brand)] hover:underline"
         >
           GitHub
         </a>
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
         <a
           href={project.demo}
           target="_blank"
-          className="text-purple-400 hover:underline"
+          className="text-[var(--app-brand)] hover:underline"
         >
           Live Demo
         </a>

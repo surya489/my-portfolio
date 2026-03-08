@@ -66,9 +66,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-mono", jetbrainsMono.variable)}>
+    <html
+      lang="en"
+      data-theme="midnight"
+      className={cn("font-mono", jetbrainsMono.variable)}
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#0F0F13] text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         <PageTransition>{children}</PageTransition>

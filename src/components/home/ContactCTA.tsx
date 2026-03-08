@@ -24,7 +24,7 @@ export default function ContactCTA() {
 
         <Link
           href="/contact"
-          className="inline-block bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition"
+          className="inline-block rounded-lg bg-[var(--app-brand-strong)] px-6 py-3 text-white hover:bg-[var(--app-brand)] transition"
         >
           Contact Me
         </Link>
