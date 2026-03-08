@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   creator: "Jayasurya",
   metadataBase: new URL("https://my-portfolio-omega-wheat-25.vercel.app"),
   openGraph: {
-    title: "Jayasurya | Frontend Developer",
+    title: "Jayasurya | React & Next.js Frontend Developer",
     description:
-      "Portfolio of Jayasurya – React and Next.js developer with 4+ years experience.",
+      "Frontend Developer specializing in React, Next.js, and modern web applications with 4+ years experience building scalable products.",
     url: "https://my-portfolio-omega-wheat-25.vercel.app",
     siteName: "Jayasurya Portfolio",
     images: [
@@ -52,9 +52,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jayasurya | Frontend Developer",
+    title: "Jayasurya | React & Next.js Frontend Developer",
     description:
-      "Frontend Developer with 4+ years experience building scalable applications using React and Next.js.",
+      "Frontend Developer specializing in React, Next.js, and modern web applications with 4+ years experience building scalable products.",
+    images: ["/logo.png"],
   },
 };
 
