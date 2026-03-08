@@ -34,12 +34,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Jayasurya" }],
   creator: "Jayasurya",
-  metadataBase: new URL("https://jayasurya-portfolio-new.vercel.app/"),
+  metadataBase: new URL("https://my-portfolio-omega-wheat-25.vercel.app"),
   openGraph: {
     title: "Jayasurya | Frontend Developer",
     description:
       "Portfolio of Jayasurya – React and Next.js developer with 4+ years experience.",
-    url: "http://localhost:3000",
+    url: "https://my-portfolio-omega-wheat-25.vercel.app",
     siteName: "Jayasurya Portfolio",
     images: [
       {

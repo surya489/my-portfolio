@@ -1,13 +1,13 @@
 export default function sitemap() {
   return [
     {
-      url: "http://localhost:3000",
+      url: "https://my-portfolio-omega-wheat-25.vercel.app",
     },
     {
-      url: "http://localhost:3000/projects",
+      url: "https://my-portfolio-omega-wheat-25.vercel.app/projects",
     },
     {
-      url: "http://localhost:3000/contact",
+      url: "https://my-portfolio-omega-wheat-25.vercel.app/contact",
     },
   ];
 }
