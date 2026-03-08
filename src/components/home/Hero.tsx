@@ -40,6 +40,7 @@ export default function Hero() {
 
           <a
             href="/resume.pdf"
+            download="Jayasurya-Resume.pdf"
             className="border border-purple-600 px-6 py-3 rounded-lg hover:bg-purple-600 hover:text-white transition"
           >
             Download Resume

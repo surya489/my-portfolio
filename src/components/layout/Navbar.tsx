@@ -24,6 +24,7 @@ export default function Navbar() {
 
           <a
             href="/resume.pdf"
+            download="Jayasurya-Resume.pdf"
             className="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-500 transition"
           >
             Resume
@@ -59,6 +60,7 @@ export default function Navbar() {
 
             <a
               href="/resume.pdf"
+              download="Jayasurya-Resume.pdf"
               className="bg-purple-600 px-4 py-2 rounded-lg text-center hover:bg-purple-500 transition"
             >
               Resume
