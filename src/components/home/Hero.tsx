@@ -2,10 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-28">
+    <section className="relative mx-auto max-w-6xl px-6 py-28">
+
+      <div className="absolute inset-0 -z-10 flex justify-center items-start">
+        <div className="h-87.5 w-175 bg-purple-600/20 blur-[140px] rounded-full"></div>
+        <div className="absolute h-62.5 w-125 bg-indigo-500/20 blur-[120px] rounded-full"></div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -13,10 +21,10 @@ export default function Hero() {
         className="max-w-3xl"
       >
         <p className="text-purple-400 text-sm mb-4">
-          Hi, my name is
+          Hi, I&apos;m
         </p>
 
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-purple-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
           Jayasurya
         </h1>
 
@@ -24,13 +32,13 @@ export default function Hero() {
           Frontend Developer
         </h2>
 
-        <p className="mt-6 text-gray-400 max-w-xl">
+        <p className="mt-6 text-gray-400 max-w-xl leading-relaxed">
           I build scalable web applications using React, Next.js, and modern
           frontend technologies. With 4+ years of experience, I focus on
           performance, clean architecture, and great user experiences.
         </p>
 
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/projects"
             className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition"
@@ -45,6 +53,35 @@ export default function Hero() {
           >
             Download Resume
           </a>
+        </div>
+
+        <div className="flex items-center gap-6 mt-10 text-xl text-gray-400">
+
+          <a
+            href="https://github.com/surya489"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 hover:scale-110 transition"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/jayasurya4899/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 hover:scale-110 transition"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="mailto:suryajaya4899@gmail.com"
+            className="hover:text-purple-400 hover:scale-110 transition"
+          >
+            <MdEmail />
+          </a>
+
         </div>
       </motion.div>
     </section>

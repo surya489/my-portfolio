@@ -18,9 +18,13 @@ export const skills = {
   tools: [
     "Git",
     "GitHub",
-    "Docker",
     "Vercel",
     "AWS",
-    "Azure",
+    "Render"
   ],
+  analytics: [
+    "Google Analytics",
+    "Mixpanel",
+    "Meta Ads"
+  ]
 };

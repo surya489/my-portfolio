@@ -26,10 +26,11 @@ export default function ProjectCard({
   return (
     <Link href={`/projects/${slug}`}>
       <motion.div
-        whileHover={{ y: -6 }}
-        className="bg-[#16161c] rounded-xl border border-zinc-800 overflow-hidden hover:border-purple-600 transition"
+        whileHover={{ y: -6, scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+        className="bg-[#16161c] rounded-xl border border-zinc-800 overflow-hidden hover:border-purple-500 transition"
       >
-        {/* Project Image */}
+        
         <Image
           src={image}
           alt={title}
@@ -43,7 +44,6 @@ export default function ProjectCard({
 
           <p className="text-gray-400 mt-3">{description}</p>
 
-          {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mt-4">
             {tech.map((item) => (
               <span
