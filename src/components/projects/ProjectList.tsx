@@ -15,6 +15,17 @@ export default function ProjectList({
   items,
   projectsPerLoad = PROJECTS_PER_LOAD,
 }: Props) {
+  if (!items.length) {
+    return (
+      <div className="app-card rounded-xl border p-8 text-center">
+        <p className="text-lg font-semibold">No projects yet</p>
+        <p className="mt-2 text-[var(--app-muted)]">
+          Project case studies will be published here soon.
+        </p>
+      </div>
+    );
+  }
+
   const initialCount = Math.min(projectsPerLoad, items.length);
   const [visibleCount, setVisibleCount] = useState(initialCount);
 

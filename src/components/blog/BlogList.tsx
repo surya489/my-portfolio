@@ -10,6 +10,17 @@ type Props = {
 };
 
 export default function BlogList({ posts, postsPerLoad = 6 }: Props) {
+  if (!posts.length) {
+    return (
+      <div className="app-card rounded-xl border p-8 text-center">
+        <p className="text-lg font-semibold">No posts yet</p>
+        <p className="mt-2 text-[var(--app-muted)]">
+          New articles will appear here soon.
+        </p>
+      </div>
+    );
+  }
+
   const initialCount = Math.min(postsPerLoad, posts.length);
   const [visibleCount, setVisibleCount] = useState(initialCount);
 

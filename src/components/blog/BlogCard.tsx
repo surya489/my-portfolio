@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 
 type Props = {
   slug: string;
@@ -14,7 +15,10 @@ type Props = {
 
 export default function BlogCard({ slug, title, excerpt, date, readTime, tags }: Props) {
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link
+      href={`/blog/${slug}`}
+      onClick={() => trackEvent("blog_open", { blog_slug: slug, blog_title: title })}
+    >
       <motion.article
         whileHover={{ y: -6, scale: 1.01 }}
         transition={{ duration: 0.2 }}

@@ -9,6 +9,7 @@ import {
     type ContactFormData,
     validateContactForm,
 } from "@/lib/contactValidation";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPage() {
     const [form, setForm] = useState<ContactFormData>({
@@ -105,6 +106,7 @@ export default function ContactPage() {
                 type: "success",
                 text: "Thanks, I will get you back shortly.",
             });
+            trackEvent("contact_submit", { source: "contact_form", status: "success" });
             setForm({
                 name: "",
                 email: "",

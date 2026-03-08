@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const latestPublished = blogs
+    .map((post) => post.publishedAt)
+    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0];
+
   return (
     <main className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="mb-16">
@@ -18,6 +22,10 @@ export default function BlogPage() {
         <p className="max-w-xl text-gray-400">
           Notes from real projects, frontend engineering decisions, and practical
           learnings from building scalable web applications.
+        </p>
+        <p className="mt-4 text-sm text-[var(--app-muted)]">
+          Publishing cadence: every 2-3 weeks.
+          {latestPublished ? ` Last updated: ${latestPublished}.` : ""}
         </p>
       </Reveal>
 

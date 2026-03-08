@@ -9,6 +9,7 @@ export const experience = [
       "Implemented Google and Microsoft logins with OAuth-based authentication flows.",
       "Worked on analytics and growth integrations including Google Analytics, Mixpanel, Google Ads, and Meta Ads.",
       "Collaborated with backend teams to integrate REST APIs and improve performance and SEO using SSR/CSR patterns.",
+      "Improved core page performance by ~25% through rendering and bundle optimization initiatives.",
     ],
   },
   {
@@ -21,6 +22,7 @@ export const experience = [
       "Worked across both WordPress and React projects, integrating APIs and third-party services.",
       "Implemented Stripe payment gateway flows for e-commerce websites, including checkout and payment status handling.",
       "Applied SEO best practices and used Google Analytics to monitor user behavior and site performance.",
+      "Contributed to e-commerce conversion improvements by streamlining checkout and payment confirmation flows.",
     ],
   },
   {
@@ -32,6 +34,7 @@ export const experience = [
       "Developed reusable frontend sections and UI components while improving responsive behavior across devices.",
       "Learned core web development workflows including version control, debugging, and cross-browser compatibility fixes.",
       "Collaborated with senior developers to deliver client-facing pages and improve overall user experience.",
+      "Helped reduce UI consistency issues by standardizing reusable layout and component patterns.",
     ],
   },
   {
@@ -44,6 +47,7 @@ export const experience = [
       "Built strong discipline in process compliance, documentation, and cross-team coordination.",
       "Reviewed and validated insurance data to reduce processing errors and improve record consistency.",
       "Worked with internal teams to resolve case-level issues within SLA timelines.",
+      "Maintained high process accuracy while handling daily insurance records under strict turnaround targets.",
     ],
   },
 ];

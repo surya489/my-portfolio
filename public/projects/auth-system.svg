@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#141B2D"/>
+  <rect x="40" y="40" width="1120" height="620" rx="24" fill="#1A2237" stroke="#273247"/>
+  <text x="80" y="180" fill="#F8FAFC" font-size="56" font-family="monospace" font-weight="700">Authentication System</text>
+  <text x="80" y="230" fill="#94A3B8" font-size="24" font-family="monospace">Secure sign-in, OAuth and protected routing</text>
+  <rect x="80" y="292" width="320" height="56" rx="12" fill="#7C3AED" fill-opacity="0.18" stroke="#7C3AED"/>
+  <text x="104" y="328" fill="#DDD6FE" font-size="22" font-family="monospace">Google + Microsoft OAuth</text>
+  <rect x="80" y="370" width="280" height="56" rx="12" fill="#7C3AED" fill-opacity="0.12" stroke="#7C3AED"/>
+  <text x="104" y="406" fill="#DDD6FE" font-size="22" font-family="monospace">JWT + session guards</text>
+  <rect x="640" y="210" width="460" height="380" rx="22" fill="#0F1526" stroke="#273247"/>
+  <rect x="680" y="260" width="380" height="44" rx="10" fill="#111827" stroke="#334155"/>
+  <rect x="680" y="324" width="380" height="44" rx="10" fill="#111827" stroke="#334155"/>
+  <rect x="680" y="388" width="180" height="42" rx="10" fill="#7C3AED"/>
+  <circle cx="1035" cy="407" r="20" fill="#1E293B" stroke="#334155"/>
+  <circle cx="1090" cy="407" r="20" fill="#1E293B" stroke="#334155"/>
+  <text x="744" y="455" fill="#94A3B8" font-size="18" font-family="monospace">Protected route enabled</text>
+</svg>

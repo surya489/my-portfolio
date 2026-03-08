@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookText, FileDown, FolderKanban, House, Mail, Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,6 +52,7 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download="Jayasurya-Resume.pdf"
+            onClick={() => trackEvent("resume_download", { source: "navbar_desktop" })}
             className="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-500 transition"
           >
             Resume
@@ -126,7 +128,10 @@ export default function Navbar() {
                     transition={{ duration: 0.2, delay: 0.15 }}
                     href="/resume.pdf"
                     download="Jayasurya-Resume.pdf"
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      trackEvent("resume_download", { source: "navbar_mobile" });
+                      setOpen(false);
+                    }}
                     className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[var(--app-brand-strong)] px-4 py-3 text-sm font-medium text-white"
                   >
                     <FileDown size={16} />

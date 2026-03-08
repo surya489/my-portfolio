@@ -2,6 +2,7 @@ import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -21,6 +22,19 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `https://my-portfolio-omega-wheat-25.vercel.app/projects/${project.slug}`,
+      type: "article",
+      images: [{ url: project.image, width: 1200, height: 700 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [project.image],
+    },
   };
 }
 
@@ -65,7 +79,54 @@ export default async function ProjectPage({ params }: Props) {
         </p>
       </Reveal>
 
+      <Reveal delay={0.14}>
+        <div className="mb-10">
+          <h2 className="mb-4 text-2xl font-semibold">Key Highlights</h2>
+          <ul className="ml-5 list-disc space-y-2 text-[var(--app-text)]/90">
+            {project.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
+
       <Reveal delay={0.16}>
+        <div className="mb-12 grid gap-8 md:grid-cols-2">
+          <article className="app-card rounded-xl border p-6">
+            <h3 className="mb-3 text-xl font-semibold">Problem</h3>
+            <p className="text-[var(--app-text)]/90">{project.caseStudy.problem}</p>
+          </article>
+
+          <article className="app-card rounded-xl border p-6">
+            <h3 className="mb-3 text-xl font-semibold">Approach</h3>
+            <ul className="ml-5 list-disc space-y-2 text-[var(--app-text)]/90">
+              {project.caseStudy.approach.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="app-card rounded-xl border p-6">
+            <h3 className="mb-3 text-xl font-semibold">Challenges</h3>
+            <ul className="ml-5 list-disc space-y-2 text-[var(--app-text)]/90">
+              {project.caseStudy.challenges.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="app-card rounded-xl border p-6">
+            <h3 className="mb-3 text-xl font-semibold">Results</h3>
+            <ul className="ml-5 list-disc space-y-2 text-[var(--app-text)]/90">
+              {project.caseStudy.results.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.18}>
         <div className="flex gap-6">
         <a
           href={project.github}
@@ -82,6 +143,30 @@ export default async function ProjectPage({ params }: Props) {
         >
           Live Demo
         </a>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <div className="app-card mt-12 rounded-xl border p-8 text-center">
+          <h2 className="mb-3 text-2xl font-semibold">Like this project?</h2>
+          <p className="mb-6 text-[var(--app-muted)]">
+            Let&apos;s discuss how I can build similar outcomes for your product.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-lg bg-[var(--app-brand-strong)] px-5 py-3 text-white hover:bg-[var(--app-brand)]"
+            >
+              Contact Me
+            </Link>
+            <a
+              href="/resume.pdf"
+              download="Jayasurya-Resume.pdf"
+              className="rounded-lg border border-[var(--app-brand)] px-5 py-3 text-[var(--app-brand)] hover:bg-[var(--app-brand-soft)]"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </Reveal>
 

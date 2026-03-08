@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Hero() {
   return (
@@ -49,6 +50,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download="Jayasurya-Resume.pdf"
+            onClick={() => trackEvent("resume_download", { source: "hero" })}
             className="rounded-lg border border-[var(--app-brand-strong)] px-6 py-3 text-[var(--app-text)] hover:bg-[var(--app-brand-strong)] hover:text-white transition"
           >
             Download Resume

@@ -3,6 +3,7 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   date: string;
+  publishedAt: string;
   readTime: string;
   tags: string[];
   content: string[];
@@ -17,6 +18,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "Practical lessons from integrating Fireblocks workflows into frontend product experiences.",
     date: "October 2025",
+    publishedAt: "2025-10-15",
     readTime: "6 min read",
     tags: ["Web3", "Fireblocks", "Frontend"],
     content: [
@@ -32,6 +34,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "How I approached payment SDK integration with focus on reliability, fallback states, and user confidence.",
     date: "November 2025",
+    publishedAt: "2025-11-10",
     readTime: "5 min read",
     tags: ["Payments", "Primer.io", "Product Engineering"],
     content: [
@@ -47,6 +50,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "A practical event-planning approach to make analytics useful for product decisions.",
     date: "December 2025",
+    publishedAt: "2025-12-04",
     readTime: "6 min read",
     tags: ["Mixpanel", "Analytics", "Product"],
     content: [
@@ -62,6 +66,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "How I started applying analytics engineering concepts in real frontend projects using Google Analytics and product tracking.",
     date: "September 2025",
+    publishedAt: "2025-09-03",
     readTime: "5 min read",
     tags: ["Google Analytics", "Analytics Engineering", "Web Development"],
     content: [
@@ -78,6 +83,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "My transition from non-voice operations into frontend engineering and what helped me grow fast.",
     date: "March 2026",
+    publishedAt: "2026-03-01",
     readTime: "6 min read",
     tags: ["Career", "Frontend", "React"],
     content: [
@@ -93,6 +99,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "When to choose Server-Side Rendering vs Client-Side Rendering based on product goals and performance.",
     date: "March 2026",
+    publishedAt: "2026-03-04",
     readTime: "7 min read",
     tags: ["Next.js", "Performance", "SEO"],
     content: [
@@ -108,6 +115,7 @@ export const blogs: BlogPost[] = [
     excerpt:
       "Key implementation notes, edge cases, and security basics from integrating third-party login providers.",
     date: "February 2026",
+    publishedAt: "2026-02-17",
     readTime: "5 min read",
     tags: ["OAuth", "Authentication", "Next.js"],
     content: [
