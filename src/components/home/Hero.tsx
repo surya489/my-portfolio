@@ -30,13 +30,12 @@ export default function Hero() {
         </h1>
 
         <h2 className="text-3xl md:text-4xl text-gray-400 mt-3">
-          Frontend Developer
+          React & Next.js Frontend Developer
         </h2>
 
         <p className="mt-6 text-gray-400 max-w-xl leading-relaxed">
-          I build scalable web applications using React, Next.js, and modern
-          frontend technologies. With 4+ years of experience, I focus on
-          performance, clean architecture, and great user experiences.
+          Frontend Developer with 4+ years of experience building scalable web applications using React and Next.js.
+        I specialize in creating high-performance user interfaces and also have experience working with backend technologies, allowing me to contribute as a full-stack developer when needed.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">

@@ -223,6 +223,43 @@
   html {
     @apply font-mono;
   }
+  section.py-20 + section.py-20,
+  section.py-24 + section.py-24,
+  section.py-28 + section.py-28,
+  section.py-20 + section.py-24,
+  section.py-24 + section.py-20,
+  section.py-28 + section.py-20,
+  section.py-20 + section.py-28,
+  section.py-28 + section.py-24,
+  section.py-24 + section.py-28 {
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  section.py-20 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  section.py-24 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  section.py-28 {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+  section.py-20 + section.py-20,
+  section.py-24 + section.py-24,
+  section.py-28 + section.py-28,
+  section.py-20 + section.py-24,
+  section.py-24 + section.py-20,
+  section.py-28 + section.py-20,
+  section.py-20 + section.py-28,
+  section.py-28 + section.py-24,
+  section.py-24 + section.py-28 {
+    padding-top: 1.5rem !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
