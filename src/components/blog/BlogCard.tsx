@@ -36,7 +36,7 @@ export default function BlogCard({ slug, title, excerpt, date, readTime, tags }:
           {tags.map((tag) => (
             <span
               key={tag}
-              className="rounded bg-[var(--app-brand-soft)] px-2 py-1 text-xs text-[var(--app-brand)]"
+              className="rounded bg-(--app-brand-soft) px-2 py-1 text-xs text-(--app-brand)"
             >
               {tag}
             </span>

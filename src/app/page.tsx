@@ -4,7 +4,6 @@ import Skills from "@/components/home/Skills";
 import Experience from "@/components/home/Experience";
 import ContactCTA from "@/components/home/ContactCTA";
 import GithubActivity from "@/components/home/GithubActivity";
-import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <GithubActivity />
       <FeaturedProjects />
-      <Testimonials />
       <Skills />
       <Experience />
       <ContactCTA />

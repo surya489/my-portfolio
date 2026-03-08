@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/projects"
-            className="rounded-lg bg-[var(--app-brand-strong)] px-6 py-3 text-white hover:bg-[var(--app-brand)] transition"
+            className="rounded-lg bg-(--app-brand-strong) px-6 py-3 text-white hover:bg-(--app-brand) transition"
           >
             View Projects
           </Link>
@@ -51,7 +51,7 @@ export default function Hero() {
             href="/resume.pdf"
             download="Jayasurya-Resume.pdf"
             onClick={() => trackEvent("resume_download", { source: "hero" })}
-            className="rounded-lg border border-[var(--app-brand-strong)] px-6 py-3 text-[var(--app-text)] hover:bg-[var(--app-brand-strong)] hover:text-white transition"
+            className="rounded-lg border border-(--app-brand-strong) px-6 py-3 text-(--app-text) hover:bg-(--app-brand-strong) hover:text-white transition"
           >
             Download Resume
           </a>
