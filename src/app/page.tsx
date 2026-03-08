@@ -1,7 +1,19 @@
+import Hero from "@/components/home/Hero";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
+import Skills from "@/components/home/Skills";
+import Experience from "@/components/home/Experience";
+import ContactCTA from "@/components/home/ContactCTA";
+import GithubActivity from "@/components/home/GithubActivity";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">My Portfolio</h1>
-    </main>
+    <>
+      <Hero />
+      <GithubActivity />
+      <FeaturedProjects />
+      <Skills />
+      <Experience />
+      <ContactCTA />
+    </>
   );
 }
