@@ -1,11 +1,15 @@
 import { skills } from "@/data/skills";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Skills() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
-      <h2 className="text-3xl font-bold mb-12">Skills</h2>
+      <Reveal>
+        <h2 className="text-3xl font-bold mb-12">Skills</h2>
+      </Reveal>
 
-      <div className="grid md:grid-cols-3 gap-10">
+      <Reveal delay={0.08}>
+        <div className="grid md:grid-cols-3 gap-10">
         
         {/* Frontend */}
         <div>
@@ -61,7 +65,8 @@ export default function Skills() {
           </div>
         </div>
 
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

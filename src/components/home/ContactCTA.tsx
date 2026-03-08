@@ -18,7 +18,7 @@ export default function ContactCTA() {
         </h2>
 
         <p className="text-gray-400 mb-8">
-          I'm always open to discussing new opportunities,
+          I&apos;m always open to discussing new opportunities,
           interesting projects, or collaborations.
         </p>
 

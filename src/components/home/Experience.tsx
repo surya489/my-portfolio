@@ -1,11 +1,15 @@
 import { experience } from "@/data/experience";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Experience() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
-      <h2 className="text-3xl font-bold mb-12">Experience</h2>
+      <Reveal>
+        <h2 className="text-3xl font-bold mb-12">Experience</h2>
+      </Reveal>
 
-      <div className="space-y-10">
+      <Reveal delay={0.08}>
+        <div className="space-y-10">
         {experience.map((job, index) => (
           <div
             key={index}
@@ -28,7 +32,8 @@ export default function Experience() {
             </ul>
           </div>
         ))}
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/home/ProjectCard";
 import { projects } from "@/data/projects";
+import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function ProjectsPage() {
     <main className="mx-auto max-w-6xl px-6 py-20">
       
       {/* Page Title */}
-      <div className="mb-16">
+      <Reveal className="mb-16">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
 
         <p className="text-gray-400 max-w-xl">
@@ -21,14 +22,16 @@ export default function ProjectsPage() {
           applications to frontend-focused experiences built with modern
           technologies.
         </p>
-      </div>
+      </Reveal>
 
       {/* Projects Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Reveal delay={0.08}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
-      </div>
+        </div>
+      </Reveal>
 
     </main>
   );

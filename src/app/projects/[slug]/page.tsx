@@ -1,14 +1,16 @@
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
+import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
 
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return {
@@ -38,12 +40,14 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
+      <Reveal>
+        <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
 
-      <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
+        <p className="text-gray-400 mb-6">{project.description}</p>
+      </Reveal>
 
-      <p className="text-gray-400 mb-6">{project.description}</p>
-
-      <div className="flex flex-wrap gap-2 mb-8">
+      <Reveal delay={0.08}>
+        <div className="flex flex-wrap gap-2 mb-8">
         {project.tech.map((tech) => (
           <span
             key={tech}
@@ -52,13 +56,17 @@ export default async function ProjectPage({ params }: Props) {
             {tech}
           </span>
         ))}
-      </div>
+        </div>
+      </Reveal>
 
-      <p className="text-gray-300 leading-relaxed mb-10">
-        {project.content}
-      </p>
+      <Reveal delay={0.12}>
+        <p className="text-gray-300 leading-relaxed mb-10">
+          {project.content}
+        </p>
+      </Reveal>
 
-      <div className="flex gap-6">
+      <Reveal delay={0.16}>
+        <div className="flex gap-6">
         <a
           href={project.github}
           target="_blank"
@@ -74,7 +82,8 @@ export default async function ProjectPage({ params }: Props) {
         >
           Live Demo
         </a>
-      </div>
+        </div>
+      </Reveal>
 
     </main>
   );
