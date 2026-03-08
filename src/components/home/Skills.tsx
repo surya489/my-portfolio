@@ -3,7 +3,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function Skills() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 py-20">
       <Reveal>
         <h2 className="text-3xl font-bold mb-12">Tech Stack</h2>
       </Reveal>

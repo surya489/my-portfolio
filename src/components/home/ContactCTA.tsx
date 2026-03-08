@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ContactCTA() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+    <section className="mx-auto max-w-4xl px-6 py-20 text-center">
       
       <motion.div
         initial={{ opacity: 0, y: 40 }}

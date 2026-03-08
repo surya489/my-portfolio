@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookText, FileDown, FolderKanban, House, Mail, Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -9,6 +10,7 @@ import { trackEvent } from "@/lib/analytics";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { href: "/", label: "Home", icon: House, note: "Landing and intro" },
@@ -32,6 +34,13 @@ export default function Navbar() {
     },
   ];
 
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--app-border)] bg-[var(--app-bg)] backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -42,20 +51,32 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-[var(--app-muted)]">
-          <Link href="/" className="hover:text-[var(--app-text)]">Home</Link>
-          <Link href="/projects" className="hover:text-[var(--app-text)]">Projects</Link>
-          <Link href="/blog" className="hover:text-[var(--app-text)]">Blog</Link>
-          <Link href="/contact" className="hover:text-[var(--app-text)]">Contact</Link>
+        <div className="hidden md:flex items-center gap-2 text-sm">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={`desktop-${item.href}`}
+                href={item.href}
+                className={`rounded-lg px-3 py-2 transition ${
+                  active
+                    ? "bg-[var(--app-brand-soft)] text-[var(--app-brand)]"
+                    : "text-[var(--app-muted)] hover:bg-[var(--app-elevated)] hover:text-[var(--app-text)]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <ThemeToggle />
 
           <a
             href="/resume.pdf"
             download="Jayasurya-Resume.pdf"
             onClick={() => trackEvent("resume_download", { source: "navbar_desktop" })}
-            className="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-500 transition"
+            className="ml-2 rounded-lg bg-[var(--app-brand-strong)] px-4 py-2 text-sm font-medium text-white transition hover:bg-[var(--app-brand)]"
           >
-            Resume
+            Download Resume
           </a>
         </div>
 
@@ -96,6 +117,7 @@ export default function Navbar() {
                   <div className="grid gap-2">
                     {navItems.map((item, index) => {
                       const Icon = item.icon;
+                      const active = isActive(item.href);
 
                       return (
                         <motion.div
@@ -107,9 +129,19 @@ export default function Navbar() {
                           <Link
                             href={item.href}
                             onClick={() => setOpen(false)}
-                            className="flex items-center gap-3 rounded-xl border border-transparent bg-[var(--app-elevated)] px-3 py-3 text-[var(--app-text)] transition hover:border-[var(--app-brand)]/40 hover:bg-[var(--app-surface)]"
+                            className={`flex items-center gap-3 rounded-xl border px-3 py-3 transition ${
+                              active
+                                ? "border-[var(--app-brand)]/40 bg-[var(--app-brand-soft)] text-[var(--app-text)]"
+                                : "border-transparent bg-[var(--app-elevated)] text-[var(--app-text)] hover:border-[var(--app-brand)]/40 hover:bg-[var(--app-surface)]"
+                            }`}
                           >
-                            <span className="rounded-lg bg-[var(--app-brand-soft)] p-2 text-[var(--app-brand)]">
+                            <span
+                              className={`rounded-lg p-2 ${
+                                active
+                                  ? "bg-[var(--app-brand)] text-white"
+                                  : "bg-[var(--app-brand-soft)] text-[var(--app-brand)]"
+                              }`}
+                            >
                               <Icon size={16} />
                             </span>
                             <span>
@@ -122,24 +154,26 @@ export default function Navbar() {
                     })}
                   </div>
 
-                  <motion.a
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2, delay: 0.15 }}
-                    href="/resume.pdf"
-                    download="Jayasurya-Resume.pdf"
-                    onClick={() => {
-                      trackEvent("resume_download", { source: "navbar_mobile" });
-                      setOpen(false);
-                    }}
-                    className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[var(--app-brand-strong)] px-4 py-3 text-sm font-medium text-white"
-                  >
-                    <FileDown size={16} />
-                    Download Resume
-                  </motion.a>
-
-                  <div className="mt-3 flex justify-center">
-                    <ThemeToggle />
+                  <div className="mt-3 flex items-center gap-3">
+                    <motion.a
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2, delay: 0.15 }}
+                      href="/resume.pdf"
+                      download="Jayasurya-Resume.pdf"
+                      onClick={() => {
+                        trackEvent("resume_download", { source: "navbar_mobile" });
+                        setOpen(false);
+                      }}
+                      className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[var(--app-brand-strong)] px-4 py-3 text-sm font-medium text-white transition hover:bg-[var(--app-brand)]"
+                    >
+                      <FileDown size={16} />
+                      Download Resume
+                    </motion.a>
+                    <ThemeToggle
+                      onToggle={() => setOpen(false)}
+                      className="h-11 w-11 shrink-0 rounded-xl"
+                    />
                   </div>
                   
                 </div>

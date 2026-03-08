@@ -1,5 +1,3 @@
-import ProjectList from "@/components/projects/ProjectList";
-import { PROJECTS_PER_LOAD, projects } from "@/data/projects";
 import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
@@ -24,9 +22,13 @@ export default function ProjectsPage() {
         </p>
       </Reveal>
 
-      {/* Projects Grid */}
       <Reveal delay={0.08}>
-        <ProjectList items={projects} projectsPerLoad={PROJECTS_PER_LOAD} />
+        <div className="app-card rounded-xl border p-8 text-center">
+          <p className="text-lg font-semibold">Coming soon</p>
+          <p className="mt-2 text-[var(--app-muted)]">
+            Projects are under process.
+          </p>
+        </div>
       </Reveal>
 
     </main>
