@@ -7,6 +7,8 @@ export const skills = {
     "Tailwind CSS",
     "HTML",
     "CSS",
+    "Vue",
+    "Nuxt"
   ],
   backend: [
     "Node.js",
