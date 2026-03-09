@@ -51,6 +51,23 @@ export default async function BlogDetailPage({ params }: Props) {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
       <Reveal>
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[var(--app-muted)]">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-[var(--app-text)]">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link href="/blog" className="hover:text-[var(--app-text)]">
+                Blog
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="text-[var(--app-text)]">{post.title}</li>
+          </ol>
+        </nav>
         <p className="text-sm text-zinc-400">
           {post.date} • {post.readTime}
         </p>

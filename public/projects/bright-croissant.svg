@@ -1,0 +1,13 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#062017"/>
+  <circle cx="210" cy="140" r="220" fill="#22C55E" fill-opacity="0.28"/>
+  <circle cx="980" cy="560" r="250" fill="#16A34A" fill-opacity="0.26"/>
+  <rect x="90" y="90" width="1020" height="520" rx="28" fill="#0B2B20" stroke="#1F7A55"/>
+  <rect x="760" y="170" width="260" height="260" rx="24" fill="#0F3A2B" stroke="#34D399"/>
+  <rect x="820" y="250" width="28" height="120" rx="8" fill="#86EFAC"/>
+  <rect x="930" y="250" width="28" height="120" rx="8" fill="#86EFAC"/>
+  <rect x="848" y="290" width="82" height="40" rx="10" fill="#86EFAC"/>
+  <text x="130" y="275" fill="#ECFDF5" font-size="72" font-family="Arial, sans-serif" font-weight="700">Bright Croissant</text>
+  <text x="130" y="338" fill="#BBF7D0" font-size="34" font-family="Arial, sans-serif">Fitness Guide Platform</text>
+  <text x="130" y="402" fill="#D1FAE5" font-size="28" font-family="Arial, sans-serif">Workout plans, progress flow, healthy routine support</text>
+</svg>

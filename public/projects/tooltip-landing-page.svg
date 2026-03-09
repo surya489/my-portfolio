@@ -1,0 +1,9 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0F172A"/>
+  <rect x="80" y="80" width="1040" height="540" rx="32" fill="#111827" stroke="#334155"/>
+  <circle cx="280" cy="300" r="70" fill="#22D3EE" fill-opacity="0.35"/>
+  <circle cx="610" cy="250" r="56" fill="#34D399" fill-opacity="0.35"/>
+  <circle cx="900" cy="370" r="64" fill="#A78BFA" fill-opacity="0.35"/>
+  <text x="130" y="520" fill="#F8FAFC" font-size="66" font-family="Arial, sans-serif" font-weight="700">Tooltip Landing Page</text>
+  <text x="130" y="572" fill="#94A3B8" font-size="30" font-family="Arial, sans-serif">Contextual UI interactions</text>
+</svg>

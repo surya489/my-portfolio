@@ -55,6 +55,23 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
       <Reveal>
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[var(--app-muted)]">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-[var(--app-text)]">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link href="/projects" className="hover:text-[var(--app-text)]">
+                Projects
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li className="text-[var(--app-text)]">{project.title}</li>
+          </ol>
+        </nav>
         <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
 
         <p className="text-gray-400 mb-6">{project.description}</p>

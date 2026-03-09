@@ -1,4 +1,6 @@
+import ProjectList from "@/components/projects/ProjectList";
 import Reveal from "@/components/ui/Reveal";
+import { PROJECTS_PER_LOAD, projects } from "@/data/projects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,12 +25,7 @@ export default function ProjectsPage() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <div className="app-card rounded-xl border p-8 text-center">
-          <p className="text-lg font-semibold">Coming soon</p>
-          <p className="mt-2 text-[var(--app-muted)]">
-            Projects are under process.
-          </p>
-        </div>
+        <ProjectList items={projects} projectsPerLoad={PROJECTS_PER_LOAD} />
       </Reveal>
 
     </main>
