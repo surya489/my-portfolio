@@ -21,6 +21,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "surya-js-learning",
+    title: "JS Concepts",
+    image: "/projects/bright-croissant.svg",
+    description:
+      "Learn JavaScript with clear concepts, runnable examples, and focused practice.",
+    tech: ["React", "Next", "TypeScript", "Tailwind CSS", "JavaScript"],
+    github: "https://github.com/surya489/surya-js-journey",
+    demo: "https://surya-js-journey-rcut.vercel.app",
+    content: `
+      Surya JS Journey is an interactive learning platform I built while preparing for frontend interviews. 
+      Instead of simply taking notes, I wanted to learn JavaScript by implementing concepts and experimenting with real code.
+
+      The platform organizes JavaScript fundamentals into structured sections where users can explore concepts, 
+      run code examples, solve challenges, and visualize how JavaScript works internally.
+
+      It focuses on making learning practical and interactive, helping developers strengthen their understanding 
+      of JavaScript fundamentals through hands-on experimentation.
+    `,
+    highlights: [
+      "Interactive JavaScript concepts with runnable examples",
+      "Built-in playground using Monaco Editor for real-time experimentation",
+      "Event loop visualizer demonstrating call stack, microtask queue, and macrotask queue",
+    ],
+    caseStudy: {
+      problem:
+        "While preparing for frontend interviews, I noticed that traditional note-taking was not helping me deeply understand JavaScript concepts. I wanted a more interactive way to study where I could implement ideas, experiment with code, and visualize how JavaScript actually executes.",
+
+      approach: [
+        "Designed a learning workflow where users first study a concept, then experiment with code in a playground, and finally reinforce understanding through challenges.",
+        "Built the platform using Next.js App Router with React components and Tailwind CSS for a clean, developer-focused UI.",
+        "Integrated Monaco Editor to provide a code editor experience similar to VS Code for running and experimenting with JavaScript snippets.",
+      ],
+      challenges: [
+        "Designing a simple but effective UI that keeps learners focused on concepts without overwhelming them.",
+        "Structuring the content so concepts, examples, and interactive tools work together smoothly.",
+      ],
+      results: [
+        "Created a developer-focused learning platform that combines theory with hands-on experimentation.",
+        "Improved my own understanding of JavaScript internals while building the platform.",
+        "Developed stronger frontend architecture, UI/UX design thinking, and problem-solving skills.",
+      ],
+    },
+  },
+  {
     slug: "bright-croissant",
     title: "Bright Croissant",
     image: "/projects/bright-croissant.svg",
