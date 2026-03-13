@@ -1,0 +1,28 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#140c2b"></rect>
+
+  <!-- Decorative background shapes -->
+  <circle cx="210" cy="140" r="220" fill="#6d28d9" fill-opacity="0.28"></circle>
+  <circle cx="980" cy="560" r="250" fill="#7c3aed" fill-opacity="0.26"></circle>
+
+  <!-- Main container -->
+  <rect x="90" y="90" width="1020" height="520" rx="28" fill="#1b1038" stroke="#6d28d9"></rect>
+
+  <!-- Title -->
+  <text x="140" y="270" fill="#f5f3ff" font-size="72" font-family="Arial, sans-serif" font-weight="700">
+    Surya JS Learning
+  </text>
+
+  <!-- Subtitle -->
+  <text x="140" y="340" fill="#ddd6fe" font-size="36" font-family="Arial, sans-serif">
+    Interactive JavaScript Learning Platform
+  </text>
+
+  <!-- Description -->
+  <text x="140" y="410" fill="#ede9fe" font-size="30" font-family="Arial, sans-serif">
+    Concepts, playground, challenges &amp; event loop visualizer
+  </text>
+
+</svg>

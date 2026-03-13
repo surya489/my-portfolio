@@ -23,7 +23,7 @@ export const projects: Project[] = [
   {
     slug: "surya-js-learning",
     title: "JS Concepts",
-    image: "/projects/bright-croissant.svg",
+    image: "/projects/js-learning.svg",
     description:
       "Learn JavaScript with clear concepts, runnable examples, and focused practice.",
     tech: ["React", "Next", "TypeScript", "Tailwind CSS", "JavaScript"],
