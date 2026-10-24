@@ -279,3 +279,24 @@
     transform: none;
   }
 }
+
+
+/* Smooth modern scrollbar and selections */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--app-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--app-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-brand);
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+  color: var(--app-text);
+}

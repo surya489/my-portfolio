@@ -2,6 +2,7 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type ThemeName = "midnight" | "light";
 type Props = {
@@ -17,17 +18,16 @@ function applyTheme(theme: ThemeName) {
 }
 
 export default function ThemeToggle({ onToggle, className = "" }: Props) {
-  const [theme, setTheme] = useState<ThemeName>(() => {
-    if (typeof window === "undefined") {
-      return "midnight";
-    }
-    const savedTheme = localStorage.getItem(STORAGE_KEY);
-    return savedTheme === "light" ? "light" : "midnight";
-  });
+  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<ThemeName>("midnight");
 
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    const savedTheme = localStorage.getItem(STORAGE_KEY) as ThemeName | null;
+    const initialTheme: ThemeName = savedTheme === "light" ? "light" : "midnight";
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme: ThemeName = theme === "midnight" ? "light" : "midnight";
@@ -36,14 +36,48 @@ export default function ThemeToggle({ onToggle, className = "" }: Props) {
     onToggle?.();
   };
 
+  if (!mounted) {
+    return (
+      <div className={`h-9 w-9 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] opacity-0 ${className}`} />
+    );
+  }
+
+  const isLight = theme === "light";
+
   return (
-    <button
+    <motion.button
       type="button"
       onClick={toggleTheme}
-      aria-label="Toggle theme"
-      className={`rounded-lg border border-(--app-border) bg-(--app-surface) p-2 text-(--app-text) transition hover:border-(--app-brand)/40 hover:bg-(--app-elevated) ${className} cursor-pointer`}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.92 }}
+      aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+      className={`relative flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] text-[var(--app-text)] shadow-sm backdrop-blur-md transition-colors hover:border-[var(--app-brand)]/60 hover:bg-[var(--app-elevated)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--app-brand)]/40 ${className}`}
     >
-      {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-    </button>
+      <AnimatePresence mode="wait" initial={false}>
+        {isLight ? (
+          <motion.div
+            key="moon"
+            initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="flex items-center justify-center text-indigo-600 dark:text-indigo-400"
+          >
+            <Moon size={19} className="stroke-[2.2]" />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="sun"
+            initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="flex items-center justify-center text-amber-400"
+          >
+            <Sun size={19} className="stroke-[2.2]" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.button>
   );
 }

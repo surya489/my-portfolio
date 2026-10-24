@@ -1,10 +1,25 @@
 <svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="700" fill="#020617"/>
-  <circle cx="970" cy="140" r="130" fill="#F59E0B" fill-opacity="0.28"/>
-  <circle cx="1030" cy="520" r="190" fill="#22D3EE" fill-opacity="0.25"/>
-  <rect x="90" y="80" width="700" height="540" rx="26" fill="#0F172A" stroke="#334155"/>
-  <rect x="150" y="160" width="580" height="60" rx="10" fill="#1E293B"/>
-  <rect x="150" y="250" width="580" height="60" rx="10" fill="#1E293B"/>
-  <rect x="150" y="340" width="580" height="60" rx="10" fill="#1E293B"/>
-  <text x="150" y="560" fill="#F8FAFC" font-size="58" font-family="Arial, sans-serif" font-weight="700">Solar Planet Form</text>
+  <rect width="1200" height="700" fill="#1f1406"></rect>
+  <circle cx="220" cy="160" r="240" fill="#f59e0b" fill-opacity="0.3"></circle>
+  <circle cx="980" cy="540" r="260" fill="#d97706" fill-opacity="0.25"></circle>
+  
+  <rect x="90" y="90" width="1020" height="520" rx="28" fill="#2d1c08" stroke="#f59e0b" stroke-width="2"></rect>
+
+  <rect x="140" y="160" width="220" height="42" rx="21" fill="#78350f" stroke="#fbbf24"></rect>
+  <text x="160" y="187" fill="#fef3c7" font-size="18" font-family="Arial, sans-serif" font-weight="700">FORM ENGINEERING</text>
+
+  <text x="140" y="275" fill="#fffbeb" font-size="64" font-family="Arial, sans-serif" font-weight="700">
+    Solar Planet Form
+  </text>
+  
+  <text x="140" y="340" fill="#fde68a" font-size="32" font-family="Arial, sans-serif" font-weight="600">
+    Structured Input Capture &amp; Validation UX
+  </text>
+
+  <text x="140" y="405" fill="#fef3c7" font-size="24" font-family="Arial, sans-serif">
+    React.js • Form Validation Logic • Error Messaging • Interactive UI Feedback
+  </text>
+
+  <rect x="140" y="455" width="180" height="48" rx="10" fill="#d97706"></rect>
+  <text x="175" y="486" fill="#ffffff" font-size="20" font-family="Arial, sans-serif" font-weight="700">Try Form</text>
 </svg>
