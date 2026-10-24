@@ -3,10 +3,45 @@ import Reveal from "@/components/ui/Reveal";
 import BlogList from "@/components/blog/BlogList";
 import { blogs, BLOG_POSTS_PER_LOAD } from "@/data/blogs";
 
+const siteUrl = "https://my-portfolio-omega-wheat-25.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Engineering Blog | Jaya Surya M",
   description:
-    "Articles by Jayasurya on frontend engineering, Next.js, performance, authentication, and product development.",
+    "Technical articles and practical insights by Jaya Surya M on Next.js, React architecture, performance optimization, authentication, and full-stack engineering.",
+  keywords: [
+    "Full Stack Blog",
+    "Next.js Tutorials",
+    "React Performance Optimization",
+    "Jaya Surya M Blog",
+    "Web Engineering Articles",
+  ],
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
+  openGraph: {
+    title: "Engineering Blog | Jaya Surya M",
+    description:
+      "Technical articles on Next.js, React architecture, performance optimization, and full-stack engineering.",
+    url: `${siteUrl}/blog`,
+    siteName: "Jaya Surya M Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Jaya Surya M Engineering Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Blog | Jaya Surya M",
+    description:
+      "Technical articles on Next.js, React architecture, performance optimization, and full-stack engineering.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function BlogPage() {
@@ -17,15 +52,15 @@ export default function BlogPage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="mb-16">
-        <h1 className="mb-4 text-4xl font-bold">Blog</h1>
+        <h1 className="mb-4 text-4xl sm:text-5xl font-extrabold text-[var(--app-text)] tracking-tight">
+          Engineering Insights &amp; Articles
+        </h1>
 
-        <p className="max-w-xl text-gray-400">
-          Notes from real projects, frontend engineering decisions, and practical
-          learnings from building scalable web applications.
+        <p className="max-w-xl text-[var(--app-muted)] text-base leading-relaxed">
+          Notes from real production projects, architecture decisions, and practical learnings from building scalable web applications.
         </p>
-        <p className="mt-4 text-sm text-[var(--app-muted)]">
-          Publishing cadence: every 2-3 weeks.
-          {latestPublished ? ` Last updated: ${latestPublished}.` : ""}
+        <p className="mt-4 text-xs text-[var(--app-muted)]">
+          {latestPublished ? `Last updated: ${latestPublished}.` : ""}
         </p>
       </Reveal>
 

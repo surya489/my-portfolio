@@ -21,46 +21,123 @@ const geistMono = Geist_Mono({
 });
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
+const siteUrl = "https://my-portfolio-omega-wheat-25.vercel.app";
+
 export const metadata: Metadata = {
   title: {
-    default: "Jayasurya | Frontend Developer (React, Next.js)",
-    template: "%s | Jayasurya",
+    default: "Jaya Surya M | Full Stack Developer (React.js, Next.js, TypeScript, Node.js)",
+    template: "%s | Jaya Surya M",
   },
   description:
-    "Jayasurya is a Frontend Developer with 4+ years of experience building scalable web applications using React, Next.js, JavaScript, and modern UI technologies.",
+    "Jaya Surya M is a Full Stack Developer with 4.7 years of overall experience building production web applications with Next.js (App Router), React, TypeScript, Node.js, and MongoDB.",
   keywords: [
+    "Jaya Surya M",
     "Jayasurya",
-    "Frontend Developer",
+    "Full Stack Developer",
     "React Developer",
-    "Next.js Developer",
-    "JavaScript Developer",
+    "Next.js App Router",
+    "TypeScript",
+    "Node.js Developer",
+    "Tailwind CSS",
+    "Primer.io Payment Gateway",
+    "Meta CAPI Conversion Tracking",
     "Web Developer Portfolio",
+    "Coimbatore Web Developer",
   ],
-  authors: [{ name: "Jayasurya" }],
-  creator: "Jayasurya",
-  metadataBase: new URL("https://my-portfolio-omega-wheat-25.vercel.app"),
+  authors: [{ name: "Jaya Surya M", url: siteUrl }],
+  creator: "Jaya Surya M",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Jayasurya | React & Next.js Frontend Developer",
+    title: "Jaya Surya M | Full Stack Developer (React.js, Next.js, Node.js, TypeScript)",
     description:
-      "Frontend Developer specializing in React, Next.js, and modern web applications with 4+ years experience building scalable products.",
-    url: "https://my-portfolio-omega-wheat-25.vercel.app",
-    siteName: "Jayasurya Portfolio",
+      "Full Stack Developer with 4.7 years of overall experience building production web platforms using Next.js App Router, React, TypeScript, Node.js, and MongoDB.",
+    url: siteUrl,
+    siteName: "Jaya Surya M Portfolio",
+    locale: "en_US",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
+        alt: "Jaya Surya M - Full Stack Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jayasurya | React & Next.js Frontend Developer",
+    title: "Jaya Surya M | Full Stack Developer (React.js, Next.js, Node.js, TypeScript)",
     description:
-      "Frontend Developer specializing in React, Next.js, and modern web applications with 4+ years experience building scalable products.",
+      "Full Stack Developer with 4.7 years of overall experience building production web platforms using Next.js App Router, React, TypeScript, Node.js, and MongoDB.",
     images: ["/logo.png"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Jaya Surya M",
+      url: siteUrl,
+      image: `${siteUrl}/logo.png`,
+      jobTitle: "Full Stack Developer",
+      description:
+        "Full Stack Developer with 4.7 years of experience building production web applications using Next.js (App Router), React, TypeScript, Node.js, and MongoDB.",
+      email: "suryajaya4899@gmail.com",
+      telephone: "+916380489800",
+      sameAs: [
+        "https://github.com/surya489",
+        "https://www.linkedin.com/in/jayasurya4899/",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Coimbatore",
+        addressRegion: "Tamil Nadu",
+        addressCountry: "IN",
+      },
+      knowsAbout: [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "REST APIs",
+        "Primer.io",
+        "Meta CAPI",
+        "Socket.io",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Jaya Surya M Portfolio",
+      description: "Portfolio of Jaya Surya M, Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.",
+      publisher: {
+        "@id": `${siteUrl}/#person`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -74,6 +151,12 @@ export default function RootLayout({
       data-theme="midnight"
       className={cn("font-mono", jetbrainsMono.variable)}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

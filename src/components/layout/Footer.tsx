@@ -3,15 +3,24 @@ import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--app-border)] bg-[var(--app-bg)]">
-      <div className="mx-auto max-w-6xl px-6 py-8 text-center text-sm text-[var(--app-muted)]">
-        <div className="mb-4 flex items-center justify-center gap-5 text-lg text-[var(--app-muted)]">
+    <footer className="border-t border-[var(--app-border)] bg-[var(--app-bg)] py-10 transition-colors">
+      <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-[var(--app-muted)]">
+        <div>
+          <p className="font-semibold text-[var(--app-text)]">
+            Jaya Surya M <span className="text-[var(--app-brand)]">•</span> Full Stack Developer
+          </p>
+          <p className="text-xs text-[var(--app-muted)] mt-1">
+            Built with Next.js (App Router), React, TypeScript &amp; Framer Motion.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-5 text-lg text-[var(--app-muted)]">
           <a
             href="https://github.com/surya489"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="hover:text-[var(--app-brand)] transition"
+            aria-label="GitHub Profile"
+            className="hover:text-[var(--app-brand)] hover:scale-110 transition-all"
           >
             <FaGithub />
           </a>
@@ -20,21 +29,24 @@ export default function Footer() {
             href="https://www.linkedin.com/in/jayasurya4899/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="hover:text-[var(--app-brand)] transition"
+            aria-label="LinkedIn Profile"
+            className="hover:text-[var(--app-brand)] hover:scale-110 transition-all"
           >
             <FaLinkedin />
           </a>
 
           <a
             href="mailto:suryajaya4899@gmail.com"
-            aria-label="Email"
-            className="hover:text-[var(--app-brand)] transition"
+            aria-label="Send Email"
+            className="hover:text-[var(--app-brand)] hover:scale-110 transition-all"
           >
             <MdEmail />
           </a>
         </div>
-        © {new Date().getFullYear()} Jayasurya. All rights reserved.
+
+        <div className="text-xs text-[var(--app-muted)]">
+          © {new Date().getFullYear()} Jaya Surya M. All rights reserved.
+        </div>
       </div>
     </footer>
   );
